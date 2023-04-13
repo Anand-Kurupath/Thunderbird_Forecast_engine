@@ -1,0 +1,109 @@
+global_forecast_engineSettings:
+  cores_to_use: 6
+  train_start_date: 2019-01-01
+  train_end_date: 2022-06-01
+  forecast_start_date: 2023-01-01
+  hyperparameter_tuning: 1
+  validation_period: 6
+  forecast_horizon: 12
+  min_month_thresh: 6
+  intermittence_thresh: .3
+  min_vol_thresh: .5
+  use_external_features: 1
+  shap_plots: 1
+  external_feature_names:
+    # - asi
+    # - ndvi
+    # - vhi
+    # - Avg Temp (C)
+    # - Max Temp (C)
+    # - Min Temp (C)
+    # - Precipitation (mm)
+    # - Relative Humidity (%)
+    # - Inflation Data
+    # - Lending Rate
+    - holiday
+  multivariate_models:
+    # - RandomForestRegressor
+    # - XGBRegressor
+    - HistGradientBoostingRegressor
+    - LinearRegression
+    - HuberRegressor
+    - RANSACRegressor
+    # - TheilSenRegressor
+    - Ridge
+    - LinearSVR
+    - KNeighborsRegressor
+    # - MLPRegressor
+  univariate_models:
+    - AutoARIMA
+    - AutoETS
+    - AutoTheta
+    # - AutoRegressive
+    # - MSTL
+    # - ARCH(1)
+    # - HistoricAverage
+    # - Naive
+    # - RWD
+    - SeasonalNaive
+    # - WindowAverage
+    # - SESOpt
+    - SeasESOpt
+    - HoltWinters
+  low_volume_sparse:
+    - hw_ets_r_MNN
+    - hw_ets_ATA
+    - hw_ets_AFA
+    - hw_ets_ATN
+    - hw_ets_NFA
+    - hw_ets_NFN
+    - hw_ets_AFN
+    - hw_ets_r_MAA
+    - hw_ets_r_MAN
+    - hw_ets_r_MNA
+    - mean_model
+    - median_model
+    - naive
+    - naive_ets
+    - snaive
+    - snaive_twoseasons
+    - croston
+  ensemble:
+    - simple_mean_ensemble
+    - weighted_mean_ensemble
+    - linear_regressor_ensemble
+    - bagging_regressor_ensemble
+  hyperparameter_tune_space:
+    params_xgb: 
+      n_estimators:
+      max_depth:
+      reg_alpha:
+      reg_lambda:
+      min_child_weight:
+      gamma:
+      learning_rate:
+      colsample_bytree:
+      subsample:
+    params_rf:
+      n_estimators:
+      max_depth:
+      min_samples_split:
+      min_samples_leaf:
+    params_lsvr:
+      epsilon:
+      max_iter:
+    params_histgb:
+      max_depth:
+      learning_rate:
+      max_bins:
+      max_iter:
+    params_ridge:
+      alpha:
+    params_knn:
+      n_neighbors:
+      weights:
+    params_mlp:
+      learning_rate_init:
+      first_layer_neurons:
+      second_layer_neurons:
+      activation:

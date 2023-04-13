@@ -1,0 +1,25 @@
+data_preprocessing:
+  version: LATAM
+  country: NA
+  run_level:
+    - PC REGION
+    - Profit Center
+    - Country
+    - Material
+  actual_sales_file_path: Data/input_data/actual_sales
+  
+  drivers:
+    macro: Data/drivers/Macro-economics
+    weather:  Data/drivers/Weather Data/Weather Data.xlsx
+    asi: Data/drivers/vegetation index/ASI_Dekad_Season1_data.csv
+    ndvi: Data/drivers/vegetation index/ndvi_adm1_data.csv
+    vhi: Data/drivers/vegetation index/vhi_adm1_dekad_data.csv
+  
+
+
+
+output_file_path:
+    model_output_path: Data/model_output
+    
+     
+  
